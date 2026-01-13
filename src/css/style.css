@@ -531,120 +531,45 @@ nav {
     position: relative;
     overflow: hidden;
 }
-.project-card {
-  background: #111827;
-  border-radius: 14px;
-  padding: 1.5rem;
-  border: 1px solid #1F2937;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: #00FF9C66;
-  box-shadow:
-    0 0 20px rgba(0, 255, 156, 0.35),
-    0 0 60px rgba(0, 255, 156, 0.15);
+/* floating container */
+.floating-logos {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
+/* individual icons */
+.floating-logos i {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.12;
+    color: #00ffcc;
+    animation: float 5s infinite ease-in-out;
+    transform: translateY(10px);
 }
 
-.project-title {
-  color: #E5E7EB;
-  font-size: 1.15rem;
-}
+/* random positions */
+.floating-logos i:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.floating-logos i:nth-child(2) { top: 70%; left: 10%; animation-delay: 2s; }
+.floating-logos i:nth-child(3) { top: 30%; left: 80%; animation-delay: 4s; }
+.floating-logos i:nth-child(4) { top: 80%; left: 60%; animation-delay: 6s; }
+.floating-logos i:nth-child(5) { top: 15%; left: 70%; animation-delay: 1s; }
+.floating-logos i:nth-child(6) { top: 50%; left: 40%; animation-delay: 3s; }
+.floating-logos i:nth-child(7) { top: 65%; left: 85%; animation-delay: 5s; }
+.floating-logos i:nth-child(8) { top: 40%; left: 20%; animation-delay: 7s; }
 
-.project-tag {
-  font-size: 0.75rem;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid #00FF9C66;
-  color: #00FF9C;
-}
-
-.project-desc {
-  color: #9CA3AF;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.25rem;
-}
-
-.project-tech span {
-  font-size: 0.7rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  background: #0F172A;
-  border: 1px solid #1F2937;
-  color: #9CA3AF;
-}
-
-.project-actions {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.btn-neon,
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-}
-
-/* Main neon button */
-.btn-neon {
-  background: linear-gradient(135deg, #00FF9C 0%, #39FF14 100%);
-  color: #0B0F14;
-  box-shadow:
-    0 0 0 rgba(0, 255, 156, 0),
-    0 0 0 rgba(0, 255, 156, 0);
-}
-
-.btn-neon:hover {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow:
-    0 0 20px rgba(0, 255, 156, 0.35),
-    0 0 50px rgba(0, 255, 156, 0.18);
-}
-
-/* Secondary ghost button */
-.btn-ghost {
-  background: transparent;
-  border: 1px solid #1F2937;
-  color: #9CA3AF;
-}
-
-.btn-ghost:hover {
-  border-color: #00FF9C66;
-  color: #00FF9C;
-  transform: translateY(-1px);
-}
-
-/* Icons */
-.project-actions i {
-  font-size: 0.85rem;
+/* floating animation */
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
 }
 
 .project-image::before {
