@@ -61,7 +61,7 @@
             const scrolled = window.pageYOffset;
             const parallax = document.querySelector('.hero-content');
             if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+                // parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
 
@@ -75,8 +75,20 @@
         }
 
         // Glitch effect text attribute
-        document.querySelectorAll('.glitch').forEach(el => {
-            const text = el.textContent;
-            el.setAttribute('data-text', text);
-        });
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroSection.addEventListener('mouseenter', () => {
+                const h1 = heroSection.querySelector('h1');
+                if (h1) {
+                    h1.classList.add('glitch');
+                }
+            });
+            
+            heroSection.addEventListener('mouseleave', () => {
+                const h1 = heroSection.querySelector('h1');
+                if (h1) {
+                    h1.classList.remove('glitch');
+                }
+            });
+        }
     
